@@ -13,11 +13,11 @@ def _get_file_extension(filename):
     return filename.split('.')[-1]
 
 def upload_artifact_image(artifact, filename):
-    return f'media/artifacts/images/{datetime.datetime.now().timestamp()}.{_get_file_extension(filename)}'
+    return f'artifacts/images/{datetime.datetime.now().timestamp()}.{_get_file_extension(filename)}'
 
 
 def upload_artifact_model(artifact, filename):
-    return f'media/artifacts/models/{datetime.datetime.now().timestamp()}.{_get_file_extension(filename)}'
+    return f'artifacts/models/{datetime.datetime.now().timestamp()}.{_get_file_extension(filename)}'
 
 class Artifact(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=False, blank=False)

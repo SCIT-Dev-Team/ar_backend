@@ -15,10 +15,12 @@ class CategoryDetailApiView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CategorySearializer
     queryset = Category.objects.all()
 
+
 class ArtifactListApiView(generics.ListCreateAPIView):
     serializer_class = ArtifactSearializer
     queryset = Artifact.objects.all()
     parser_classes = [MultiPartParser, FormParser]
+    
 
 # TODO - disable delete api view in production
 class ArtifactDetailApiView(generics.RetrieveUpdateDestroyAPIView):
